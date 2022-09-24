@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
   <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="stylesheet.css" class="">
+
   <title>Frontend Mentor | E-commerce product page</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -16,55 +17,55 @@
 </head>
 <body>
   <header>
+   
     <nav>
-      <div class="hamburber" aria-label="menu-button" role="button" myFunction(this)">
-        <div class="bar1"></div><div class="bar2"></div><div class="bar3"></div>
-      </div>
       <div class="menu-container" role="presentation">
-        <ul class="menu" role="menu">
-          <li>Collections</li>
-          <li>Men</li>
-          <li>Women</li>
-          <li>About</li>
-          <li>Contact</li>
+        <ul class="menu fs-menu-text ls-menu-text" role="menu">
+          <li><a href="#">Collections</a></li>
+          <li><a href="#">Men</a></li>
+          <li><a href="#">Women</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
         </ul>
       </div>    
     </nav>
-    <img src="images/logo.svg" alt="Logo of the brand sneakers">
-    <img src="images/icon-cart.svg" alt="icon cart">
-    <img src="images/image-avatar.png" alt="avatar">
+     <div class="hamburger" aria-label="menu-button" role="button" onclick="myFunction(this)">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+    <img class="logo" src="images/logo.svg" alt="Logo of the brand sneakers">
+    <img class="shopping-cart" src="images/icon-cart.svg" alt="icon cart">
+    <img class="avatar-img" src="images/image-avatar.png" alt="avatar">
   </header>
   <main>
     <section class="banner">
       <div class="slider">
-        <div class="button-next" id="button-next" role="button"><span>&#60</span></div>
-        <div class="button-previous" id="button-previous" role="button"><span>&#62</span></div>
+        <button class="button-next" id="button-next" role="button"><img src="images/icon-next.svg" alt=""></button>
+        <button class="button-prev" id="button-prev" role="button"><img src="images/icon-previous.svg" alt=""></button>
+        
+        <ul class="all-slides">
+          <li class="slide">
+            <img src="images/image-product-1.jpg" alt="product picture">
+          </li>
+          <li class="slide">
+            <img src="images/image-product-2.jpg" alt="product picture">
+          </li>
+          <li class="slide">
+            <img src="images/image-product-3.jpg" alt="product picture">
+          </li>
+          <li class="slide">
+            <img src="images/image-product-4.jpg" alt="product picture">
+          </li>
+        </ul>
       </div>
-      <ul class="all-slides">
-        <li class="slide">
-          <img src="images/image-product-1.jpg" alt="product picture">
-        </li>
-        <li class="slide">
-          <img src="images/image-product-2.jpg" alt="product picture">
-        </li>
-        <li class="slide">
-          <img src="images/image-product-3.jpg" alt="product picture">
-        </li>
-        <li class="slide">
-          <img src="images/image-product-4.jpg" alt="product picture">
-        </li>
-      </ul>
-
-      <div class="thumbnail-gallery">
-        <img src="images/image-product-1-thumbnail.jpg" alt="product picture thumbnail" onclick="openModal">
-        <img src="images/image-product-2-thumbnail.jpg" alt="product picture thumbnail" onclick="openModal">
-        <img src="images/image-product-3-thumbnail.jpg" alt="product picture thumbnail" onclick="openModal">
-        <img src="images/image-product-4-thumbnail.jpg" alt="product picture thumbnail" onclick="openModal">
-      </div>
+        <div class="thumbnail-gallery">
+          <img src="images/image-product-1-thumbnail.jpg" alt="product picture thumbnail" onclick="openModal">
+          <img src="images/image-product-2-thumbnail.jpg" alt="product picture thumbnail" onclick="openModal">
+          <img src="images/image-product-3-thumbnail.jpg" alt="product picture thumbnail" onclick="openModal">
+          <img src="images/image-product-4-thumbnail.jpg" alt="product picture thumbnail" onclick="openModal">
+        </div>
       
-
-      <img src="" alt="">
-      onclick = "openModal"
 
     </section>
     <section class="product-description">
@@ -100,6 +101,8 @@
     Coded by <a href="#">Harm Intemann</a>.
   </div>
   <script src="main.js"></script>
+  <script src="slider.js"></script>
+  <script src="swiped-events.min.js"></script>
 </body>
 </html>
 
