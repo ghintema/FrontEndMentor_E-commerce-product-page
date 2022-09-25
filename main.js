@@ -1,22 +1,23 @@
-// Benötigte Funktionen:
 
-// Changing hamburger-icon to cross
+
+
+
 const myFunction = (event) => {
     event.classList.toggle("change");
-  }
-
-
-const updateCart = () => {
-    // Wieviel waren sind schon im Korb?
-    // Wieviel waren sollen hinzugefügt werden?
+    document.getElementById('navigation').classList.toggle("nav-open");
 }
 
+let display = document.getElementById('number-of-items');
+const test = (n) => {
+    console.log(n);
+    let current = parseInt(display.innerHTML);
 
-// const change = (n) => {
-//     let current = document.getElementById('number-of-items').innerHTML
-//     current = parseInt(current);
-//     if (current > 0 ) {
-//         current += n;
-//         document.getElementById('number-of-items').innerHTML = ${current};
-//     }
-// }
+    if ( current > 0 || (current === 0 & n === 1) ) {
+        current += n;
+        display.innerHTML = current;
+    }
+    
+};
+
+
+

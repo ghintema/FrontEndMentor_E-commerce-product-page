@@ -1,0 +1,437 @@
+/* Figma Analysys */
+
+/*                             Mobile                  Desktop
+
+primary Heading             28px/32px/700             44px/48px/700
+
+secondary Heading           12px/15px/700             13px/16px/700
+
+main text                   15px/25px/400             16px/26px/400
+
+menu text                   18px/26px/700             15px/26px/400
+
+price                       28px/35px/700             28px/35px/700
+
+old price                   16px/26px/700             16px/26px/700
+
+discount                    16px/20px/700             16px/20px/700
+
+Add to cart                 16px/20px/700             16px/20px/700 */
+
+/* 
+### Primary Colors
+
+- Orange: hsl(26, 100%, 55%)
+- Pale orange: hsl(25, 100%, 94%)
+
+### Neutral Colors
+
+- Very vark blue: hsl(220, 13%, 13%)
+- Dark grayish blue: hsl(219, 9%, 45%)
+- Grayish blue: hsl(220, 14%, 75%)
+- Light grayish blue: hsl(223, 64%, 98%)
+- White: hsl(0, 0%, 100%)
+- Black (with 75% opacity for lightbox background): hsl(0, 0%, 0%)
+
+## Typography: "Kumbh Sans" 400/700
+ */
+
+
+ /* DEFINITION OF ROOT VARIABLES */
+
+:root{
+
+    --ff-main:    'Kumbh Sans', sans-serif;
+
+    --fw-bold:      700;
+    --fw-regular:   400;
+
+    --fs-100: 0.75rem;      /* 12px */
+    --fs-200: 0.8125rem;    /* 13px */
+    --fs-300: 0.9375rem;    /* 15px */
+    --fs-400: 1rem;
+    --fs-500: 1.125rem;     /* 18px */
+    --fs-700: 1.75rem;      /* 28px */
+    --fs-900: 2.75rem;      /* 48px */
+    
+    /* font-size allignment for mobile  */
+    --fs-primary-heading:   var(--fs-700);
+    --fs-secondary-heading: var(--fs-100);
+    --fs-main-text:         var(--fs-300);
+    --fs-menu-text:         var(--fs-500);
+    --fs-price:             var(--fs-700);
+    --fs-old-price:         var(--fs-400);
+    --fs-discount:          var(--fs-400);
+    --fs-add-to-cart:       var(--fs-400);    
+
+    /* all line-spacing */
+    --ls-100: 0.9375rem;    /* 15px */
+    --ls-200: 1rem;
+    --ls-300: 1.25rem;      /* 20px */
+    --ls-500: 1.625rem;     /* 26px */
+    --ls-600: 2rem;         /* 35px */
+    --ls-700: 2.25rem;      /* 36px */
+    --ls-900: 3rem;         /* 48px */
+
+    /* line-size allignment for mobile */
+    --ls-primary-heading:   var(--ls-700);
+    --ls-secondary-heading: var(--ls-100);
+    --ls-main-text:         var(--ls-500);
+    --ls-menu-text:         var(--ls-500);
+    --ls-price:             var(--ls-600);
+    --ls-old-price:         var(--ls-500);
+    --ls-discount:          var(--ls-300);
+    --ls-add-to-cart:       var(--ls-300);  
+
+    --f-color-main-text:        hsl(219, 9%, 45%);
+    --f-color-primary-heading:  hsla(220, 14%, 13%, 1);
+    --f-color-secondary-heading:hsl(26, 100%, 55%);
+    --f-color-old-price:        hsla(220, 14%, 75%, 1);
+
+    --primary-orange:           hsl(26, 100%, 55%);
+
+
+}
+
+@media screen and (min-width: 990px) {
+
+    :root {
+        /* font-size-allignment for desktop */
+        --fs-primary-heading:   var(--fs-900);
+        --fs-secondary-heading: var(--fs-200);
+        --fs-main-text:         var(--fs-400);
+        --fs-menu-text:         var(--fs-300);   
+        
+        /* line-size-allignment for desktop  */
+        --ls-primary-heading:   var(--ls-900);
+    }
+}
+
+
+/* DEFINITION OF UTILTIY CLASSES */
+
+.fs-primary-heading     {font-size: var(--fs-primary-heading);}
+.fs-secondary-heading   {font-size: var(--fs-secondary-heading);}
+.fs-main-text           {font-size: var(--fs-main-text);}
+.fs-menu-text           {font-size: var(--fs-menu-text);}
+.fs-price               {font-size: var(--fs-price);}
+.fs-old-price           {font-size: var(--fs-old-price);}
+.fs-discount            {font-size: var(--fs-discount);}
+.fs-add-to-cart         {font-size: var(--fs-add-to-cart);}
+
+.ls-primary-heading     {line-height: var(--ls-primary-heading);}
+.ls-secondary-heading   {line-height: var(--ls-secondary-heading);}
+.ls-main-text           {line-height: var(--ls-main-text);}
+.ls-menu-text           {line-height: var(--ls-menu-text);}
+.ls-price               {line-height: var(--ls-price);}
+.ls-old-price           {line-height: var(--ls-old-price);}
+.ls-discount            {line-height: var(--ls-discount);}
+.ls-add-to-cart         {line-height: var(--ls-add-to-cart);}
+
+.fw-regular             {font-weight: 400;}
+ 
+.f-color-main-text          {color: var(--f-color-main-text);}  
+.f-color-primary-heading    {color: var(--f-color-primary-headg);}
+.f-color-secondary-heading  {color: var(--primary-orange);}
+.f-color-old-price          {color: var(--f-color-old-price);}
+/* END OF DEFINITION OF UTILITY CLASSES */
+
+
+* { /* Reseting some basics */
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    border:none; 
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
+html {font-size: 100%;}  /* improved accessibility */
+
+body {
+    max-width: 445px;
+    margin: auto;
+    font-family: var(--ff-main);
+    font-weight: var(--fw-regular);
+
+}
+
+@media screen and (min-width: 990px) {
+  body {
+    max-width: 1110px;
+  }
+}
+
+/* STYLING THE HEADER-AREA */
+
+header {
+  display: grid;
+  grid-template-columns: minmax(35px, 8%)  69% 15% 50px;
+  align-items: center;
+  border:1px solid red;
+  padding: 20px 24px;
+}
+.logo {
+  width: 137px;
+}
+.shoping-cart {
+  width: 21px;
+}
+.avatar-img {
+  width: 24px;
+}
+
+@media screen and (min-width: 990px) {
+  header {
+    max-width: 1110px;
+    display: grid;
+    grid-template-columns: minmax(35px, 8%)  69% 15% 50px;
+  }
+}
+
+
+/* STYLING THE HAMBURBER-MENU ICON */
+.hamburger {
+  display: inline-block;
+  cursor: pointer;
+  z-index: 5;
+  opacity: 0.9;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 20px;
+  height: 3px;
+  background-color: #69707d;
+  margin: 3px 0;
+  transition: 0.3s;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+  transform: translate(0, 6px) rotate(-45deg);
+}
+
+/* Fade out the second bar */
+.change .bar2 {opacity: 0;}
+
+/* Rotate last bar */
+.change .bar3 {
+  transform: translate(0, -6px) rotate(45deg);
+}
+
+@media screen and (min-width: 990px) {
+  .hamburger {display: none;}
+  
+}
+/* END OF STYLING THE HAMBURBER-MENU ICON */
+
+
+/* STYLING THE NAV */
+nav {
+  position:absolute;
+  top:0px;
+  right: 110%;
+  width: 100%;
+  height:100vh;
+  margin: auto;
+  padding:92px 24px;
+  background-image: linear-gradient(to right, white 0%, white 66%, rgba(30,30,30,0.7)66%);
+  opacity: 0;
+  z-index: 2;
+  transition:  0.2s ease-in-out;
+}
+.menu {
+  color:black;
+  font-weight:bold;
+}
+.menu > li {margin: 20px 0px;}
+.menu a {color: black;}
+.nav-open { /*This is toggled via javascript to open/close the menu */
+  right: 0%;
+  opacity: 1;
+  transition: 0.2s ease-in-out;
+}
+
+@media screen and (min-width: 990px) {
+  /* Menu-liste auf inline-block stellen und ausrichten */
+  
+  nav {
+    position: unset;
+    width: auto;
+    height: auto;
+    padding:0;
+    opacity: 1;
+    background-image:none;
+    transition: none;
+    grid-area: 1 / 2 / 2 / 3;
+  }
+  .menu {
+    display:flex;
+    gap:20px;
+  }
+  .menu a {
+    color:#7a808b;
+    font-weight: 400;
+  }
+
+
+}
+
+
+/* STYLING THE BANNER/SLIDER */
+.banner {
+  width: 100%;
+  height:auto;
+  margin:auto;
+  overflow:hidden;
+  padding: 0px;
+}
+
+.thumbnail-gallery {
+  display:none;
+}
+.thumbnail-gallery > img {
+  width:20%;
+  margin:
+}
+
+@media screen and (min-width: 990px) {
+
+  .banner, .product{    
+    border:1px solid red;
+    max-width: 445px;
+    border-image-repeat: 10px;
+    margin: 0;
+    padding:0 !important
+    }
+  .slider {border-radius: 10px;}
+  .thumbnail-gallery {
+    display: flex;
+    flex-wrap: nowrap;
+    gap:31px;
+    width: 100%;
+    padding:0px;
+    margin: 32px 0px 0px;
+  }
+
+  .thumbnail-gallery > img {
+    width: 88px;
+    height:88px;
+    border-radius:10px;
+  }
+}
+.slider {
+  position: relative;
+  height:80vw; /* 300px/375px */
+  max-height: 356px; /* 600px * 80% */
+  overflow:hidden;
+   /* width is beeing set in slider.js according to number of slides */
+ }
+
+.all-slides {
+  display: flex;
+  position: relative;
+  left: 0;
+  /* width is beeing set in slider.js according to number of slides */
+  margin-bottom: .8em;
+  padding: 0;
+  -webkit-transition: left .8s ease-in-out;
+  -moz-transition: left .8s ease-in-out;
+  -o-transition: left .8s ease-in-out;
+  transition: left .8s ease-in-out;
+  
+}
+
+.slide {
+  /* width is beeing set in javascript according to number of slides */
+  padding:0%; /* Creating distance between slides */
+  border-radius: 10px;
+}
+
+ /* Bilder responsive */
+ .all-slides img {
+  width: 100%;
+  height:auto;
+  border-radius: 0px;
+}
+
+.button-prev, .button-next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position:absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  background: rgba(255,255,255,1);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px; 
+  color:white;
+  z-index: 1;
+}
+.button-prev{left: 4%}
+.button-next {right: 4%}
+.button-prev:hover, 
+.button-next:hover {background: rgba(205,205,205,1)}
+
+
+/* END OF STYLING THE BANNER/SLIDER */
+
+
+/* STYLING MAIN AREA */
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+}
+
+.product {padding: 0px 24px }
+
+h1 {margin:16px 0;}
+
+.prices {
+  display:grid;
+  grid-template-columns:122px 20% 1fr;
+  align-items: center;
+  margin:24px 0;
+  font-weight: 700;
+}
+
+
+.discount {
+  width: 51px;
+  height: 27px;
+  color:var(--primary-orange);
+  background-color: #fffee2;
+  text-align: center;
+  padding-top:5px; /* to center vertically */
+  border-radius:8px;
+}
+
+.old-price {
+  text-decoration: line-through;
+  justify-self: end;
+}
+
+.new-items-to-cart {
+  display:flex;
+  justify-content:space-around;
+  align-items: center;
+  background-color: #f6f8fd;
+  border-radius: 10px;
+  width: 100%;
+  height: 56px;
+}
+
+.add-to-cart {
+  color: white;
+  height: 56px;
+  width: 100%;
+  margin: 16px 0;
+  border-radius: 10px;
+  background-color: var(--primary-orange);
+  box-shadow: 0px 20px 50px -20px #FF7E1B;
+}

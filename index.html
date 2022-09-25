@@ -17,23 +17,23 @@
 </head>
 <body>
   <header>
-   
-    <nav>
-      <div class="menu-container" role="presentation">
-        <ul class="menu fs-menu-text ls-menu-text" role="menu">
-          <li><a href="#">Collections</a></li>
-          <li><a href="#">Men</a></li>
-          <li><a href="#">Women</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>    
+    
+    <nav id="navigation">
+      <ul class="menu fs-menu-text ls-menu-text" role="menu">
+        <li><a href="#">Collections</a></li>
+        <li><a href="#">Men</a></li>
+        <li><a href="#">Women</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
     </nav>
-     <div class="hamburger" aria-label="menu-button" role="button" onclick="myFunction(this)">
+    <!-- Aufgrund der Stapellogik MUSS der hamburger hinter das nav! -->
+    <div class="hamburger" aria-label="menu-button" role="button" onclick="myFunction(this)">
       <div class="bar1"></div>
       <div class="bar2"></div>
       <div class="bar3"></div>
     </div>
+    
     <img class="logo" src="images/logo.svg" alt="Logo of the brand sneakers">
     <img class="shopping-cart" src="images/icon-cart.svg" alt="icon cart">
     <img class="avatar-img" src="images/image-avatar.png" alt="avatar">
@@ -68,31 +68,28 @@
       
 
     </section>
-    <section class="product-description">
-      <h2 class="fs-secondary-heading ls-secondary-heading f-color-secondary-heading">sneaker company</h2>
-      <h1 class="fs-primary-heading ls-primary-heading f-color-main-text">Fall Limited Edition Sneakers</h1>
-      <p class="fs-main-text ls-main-text">
-        These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.
-      </p>
-    </section>
-    <section class="prices">
-      <p class="current-price">$125.00</p>
-      <p class="discount">50%</p>
-      <p class="old-price">$250</p>
-    </section>
-    <section class="cart">
-      <div class="new-items-to-cart">
-        <div class="decrease" id="decerase" role="button" onclick="change(1)"><img src="images/icon-minus.svg" alt=""></div>
-        <p class="number-of-items-to-add" id="number-of-items"></p>
-        <div class="increase" id="increase" role="button" onclick="change(-1)"><img src="images/icon-plus.svg" alt=""></div>
+    <section class="product">
+      <div class="product-description">
+        <h2 class="fs-secondary-heading ls-secondary-heading f-color-secondary-heading">sneaker company</h2>
+        <h1 class="fs-primary-heading ls-primary-heading ">Fall Limited Edition Sneakers</h1>
+        <p class="fs-main-text ls-main-text f-color-main-text">
+          These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.
+        </p>
       </div>
-      <button class="add-to-cart"><img src="images/icon-cart.svg" alt="" onclick="updateCart">Add to cart</button>
+      <div class="prices">
+        <p class="current-price fs-price ls-prcie">$125.00</p>
+        <p class="discount">50%</p>
+        <p class="old-price f-color-old-price">$250</p>
+      </div>
+      <div class="cart">
+        <div class="new-items-to-cart">
+          <div class="decrease" id="decrease" role="button" onclick="test(-1)"><img src="images/icon-minus.svg" alt=""></div>
+          <p class="number-of-items-to-add" id="number-of-items">2</p>
+          <div class="increase" id="increase" role="button" onclick="test(1)"><img src="images/icon-plus.svg" alt=""></div>
+        </div>
+        <button class="add-to-cart"><img src="images/icon-cart.svg" alt="" onclick="updateCart">Add to cart</button>
+      </div>
     </section>
-
-
-
-
-
   </main>
 
   
