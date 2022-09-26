@@ -28,19 +28,19 @@
       </ul>
     </nav>
     <!-- Aufgrund der Stapellogik MUSS der hamburger hinter das nav! -->
-    <div class="hamburger" aria-label="menu-button" role="button" onclick="myFunction(this)">
+    <button class="hamburger" aria-label="menu-button" onclick="myFunction(this)">
       <div class="bar1"></div>
       <div class="bar2"></div>
       <div class="bar3"></div>
-    </div>
+    </button>
     
     <img class="logo" src="images/logo.svg" alt="Logo of the brand sneakers">
     <img class="shopping-cart" src="images/icon-cart.svg" alt="icon cart">
     <img class="avatar-img" src="images/image-avatar.png" alt="avatar">
   </header>
   <main>
-    <section class="banner">
-      <div class="slider">
+    <section class="banner" id="banner">
+      <div class="slider" id="slider-">
         <button class="button-next" id="button-next" role="button"><img src="images/icon-next.svg" alt=""></button>
         <button class="button-prev" id="button-prev" role="button"><img src="images/icon-previous.svg" alt=""></button>
         
@@ -59,14 +59,12 @@
           </li>
         </ul>
       </div>
-        <div class="thumbnail-gallery">
-          <img src="images/image-product-1-thumbnail.jpg" alt="product picture thumbnail" onclick="openModal">
-          <img src="images/image-product-2-thumbnail.jpg" alt="product picture thumbnail" onclick="openModal">
-          <img src="images/image-product-3-thumbnail.jpg" alt="product picture thumbnail" onclick="openModal">
-          <img src="images/image-product-4-thumbnail.jpg" alt="product picture thumbnail" onclick="openModal">
-        </div>
-      
-
+      <div class="thumbnail-gallery" id="thumbnail-gallery-">
+        <img src="images/image-product-1-thumbnail.jpg" alt="product picture thumbnail" onclick="goTo(1)">
+        <img src="images/image-product-2-thumbnail.jpg" alt="product picture thumbnail" onclick="goTo(2)">
+        <img src="images/image-product-3-thumbnail.jpg" alt="product picture thumbnail" onclick="goTo(3)">
+        <img src="images/image-product-4-thumbnail.jpg" alt="product picture thumbnail" onclick="goTo(4)">
+      </div>
     </section>
     <section class="product">
       <div class="product-description">
@@ -83,14 +81,24 @@
       </div>
       <div class="cart">
         <div class="new-items-to-cart">
-          <div class="decrease" id="decrease" role="button" onclick="test(-1)"><img src="images/icon-minus.svg" alt=""></div>
+          <button class="decrease" id="decrease" role="button" onclick="test(-1)"><img src="images/icon-minus.svg" alt=""></button>
           <p class="number-of-items-to-add" id="number-of-items">2</p>
-          <div class="increase" id="increase" role="button" onclick="test(1)"><img src="images/icon-plus.svg" alt=""></div>
+          <button class="increase" id="increase" role="button" onclick="test(1)"><img src="images/icon-plus.svg" alt=""></button>
         </div>
-        <button class="add-to-cart"><img src="images/icon-cart.svg" alt="" onclick="updateCart">Add to cart</button>
+        <button class="add-to-cart" id="add-to-cart"><img src="images/icon-cart-white.svg" alt="" onclick="updateCart">Add to cart</button>
       </div>
     </section>
+  <!-- modal here -->
+  <div class="modal" id="modal">
+    <div class="modal-content" id="modal-content">
+      <span class="close">&times;</span>
+      <!-- put the slider here via javascript -->
+    </div>
+  </div>
+  
   </main>
+
+  
 
   
   <div class="attribution">
@@ -104,15 +112,3 @@
 </html>
 
 
-
-/* Rectangle */
-
-position: absolute;
-width: 327px;
-height: 56px;
-left: 24px;
-top: 756px;
-
-background: #FF7E1B;
-box-shadow: 0px 20px 50px -20px #FF7E1B;
-border-radius: 10px;

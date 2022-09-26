@@ -2,7 +2,9 @@
 const slide = document.getElementsByClassName('all-slides')[0] // [0] to turn html-collection into single Element.
 const buttonNext = document.getElementById('button-next');
 const buttonPrev = document.getElementById('button-prev');
+const gallery = document.getElementById('thumbnail-gallery-')
 let slides = document.getElementsByClassName('slide')
+
 let intervalID;
 let intervalTime = 2500;
 
@@ -28,10 +30,36 @@ for (let i = 0; i < slides.length; i++) {
     slides[i].style.width = `${100/slides.length}%`
 }
 
+// FUNCTION DEFINITION
+
+
+const thumbNailHighlighting = (index) => {
+    console.log(index);
+    gallery.children[0].style.opacity = '1';
+    gallery.children[1].style.opacity = '1';
+    gallery.children[2].style.opacity = '1';
+    gallery.children[3].style.opacity = '1';
+    if (index === 5) {
+        gallery.children[0].style.opacity = '0.3'    
+    }
+    gallery.children[index - 1].style.opacity = '0.3'
+}
+
 const moveOn = (step) => { 
-    if (index > slides.length - 2) {return} // prevents fast overclicking beyond last slide
+    if (index >= slides.length - 1) {return} // prevents fast overclicking beyond last slide
     if (index < 1 ) {return} // prevents fast underclicking below first slide
     index += step;
+    slide.style.transition = '0.6s ease';
+    //slide.style.transform = `translateX(-${slideWidth * index }px)`
+    slide.style.left = `-${index}00%`
+    thumbNailHighlighting(index);
+}
+
+
+
+const goTo = (target) => {
+    index = target;
+    thumbNailHighlighting(index)
     slide.style.transition = '0.6s ease';
     //slide.style.transform = `translateX(-${slideWidth * index }px)`
     slide.style.left = `-${index}00%`
@@ -62,16 +90,24 @@ const startAutoPlay = () => {
 const stopAutoPlay = () => {
     clearInterval(intervalID);
 }
+
+
+
+// FUNCTION INVOCING
 startAutoPlay();
 buttonNext.addEventListener('click',() => {moveOn(1)});
 buttonPrev.addEventListener('click',() => {moveOn(-1)});
 
 // Resetting the slide at the end or beginning for emulating the loop.
 slide.addEventListener('transitionend', reset);
+slide.addEventListener('transitionend', thumbNailHighlighting(index));
 buttonNext.addEventListener('mouseenter', stopAutoPlay);
 buttonPrev.addEventListener('mouseenter', stopAutoPlay);
 slide.addEventListener('mouseenter', stopAutoPlay);
+gallery.addEventListener('mouseenter', stopAutoPlay);
+gallery.addEventListener('mouseleave', startAutoPlay);
 slide.addEventListener('mouseleave', startAutoPlay);
+
 
 slide.addEventListener('swiped-left', () => {moveOn(1)});
 slide.addEventListener('swiped-right', () => {moveOn(-1)});
