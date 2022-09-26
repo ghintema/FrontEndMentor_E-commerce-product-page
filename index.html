@@ -37,6 +37,15 @@
     <img class="logo" src="images/logo.svg" alt="Logo of the brand sneakers">
     <img class="shopping-cart" src="images/icon-cart.svg" alt="icon cart">
     <img class="avatar-img" src="images/image-avatar.png" alt="avatar">
+
+    <!-- cart-preview here   -->
+    <div class="cart-preview">
+      <p class="cart-title">Cart</p>
+      <div class="cart-content">
+        <p>Your cart is empty</p>
+      </div>
+      <button class="checkout">Checkout</button>
+    </div>
   </header>
   <main>
     <section class="banner" id="banner">
@@ -81,17 +90,18 @@
       </div>
       <div class="cart">
         <div class="new-items-to-cart">
-          <button class="decrease" id="decrease" role="button" onclick="test(-1)"><img src="images/icon-minus.svg" alt=""></button>
-          <p class="number-of-items-to-add" id="number-of-items">2</p>
-          <button class="increase" id="increase" role="button" onclick="test(1)"><img src="images/icon-plus.svg" alt=""></button>
+          <button class="decrease" id="decrease" role="button" onclick="collect(-1)"><img src="images/icon-minus.svg" alt=""></button>
+          <p class="number-of-items-to-add" id="number-of-items">1</p>
+          <button class="increase" id="increase" role="button" onclick="collect(1)"><img src="images/icon-plus.svg" alt=""></button>
         </div>
         <button class="add-to-cart" id="add-to-cart"><img src="images/icon-cart-white.svg" alt="" onclick="updateCart">Add to cart</button>
       </div>
     </section>
   <!-- modal here -->
   <div class="modal" id="modal">
-    <div class="modal-content" id="modal-content">
+    <div class="modal-content" id="modal-content-">
       <span class="close">&times;</span>
+      
       <!-- put the slider here via javascript -->
     </div>
   </div>

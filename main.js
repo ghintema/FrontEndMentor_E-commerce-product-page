@@ -4,14 +4,16 @@
 
 const myFunction = (event) => {
     event.classList.toggle("change");
-    let right = (window.innerWidth - document.body.clientWidth -16) / 2;
+    let right = (window.innerWidth - document.body.clientWidth - 16 ) / 2;
     let navigation = document.getElementById('navigation');
     navigation.classList.toggle("nav-open");
     navigation.style.marginRight = `${right}px`;
 }
 
 let display = document.getElementById('number-of-items');
-const test = (n) => {
+
+// This function is invoced with "+" and "-" buttons
+const collect = (n) => {
     console.log(n);
     let current = parseInt(display.innerHTML);
 
@@ -19,12 +21,12 @@ const test = (n) => {
         current += n;
         display.innerHTML = current;
     }
-    
 };
 
 
 // Get the modal
 let modal = document.getElementById("modal");
+let modalContent = document.getElementById('modal-content-')
 
 // Get the button that opens the modal
 let btn = document.getElementById("add-to-cart");
@@ -33,7 +35,7 @@ let btn = document.getElementById("add-to-cart");
 let span = document.getElementsByClassName("close")[0];
 
 // Get the banner to insert as modal-content
-let banner = document.getElementById("banner")
+let banner = document.getElementById("banner").cloneNode(true);
 
 // When the user clicks on the button and mediaquery match, open the modal
 let x = window.matchMedia("(min-width: 990px)")
