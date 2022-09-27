@@ -33,7 +33,6 @@ for (let i = 0; i < slides.length; i++) {
 // FUNCTION DEFINITION
 
 const thumbNailHighlighting = (index) => {
-    console.log(index);
     gallery.children[0].style.opacity = '1';
     gallery.children[1].style.opacity = '1';
     gallery.children[2].style.opacity = '1';

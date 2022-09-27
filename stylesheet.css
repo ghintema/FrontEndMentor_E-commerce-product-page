@@ -170,71 +170,30 @@ header {
   display: grid;
   grid-template-columns: minmax(35px, 8%)  69% 15% 50px;
   align-items: center;
-  padding: 20px 24px;
+  padding: 5px 24px;
 }
 .logo {
   width: 137px;
 }
-.shoping-cart {
+.icon-of-shopping-cart {
   width: 21px;
+  box-sizing:content-box;
+  padding:15px;
 }
+
+.avatar-img:hover,
+.avatar-img:focus,
+.icon-of-shopping-cart:hover,
+.icon-of-shopping-cart:focus {
+  transform: scale(1.2)
+}
+
 .avatar-img {
   width: 24px;
+  padding:15px 0;
 }
+/*  END OF STYLING THE HEADER-AREA */
 
-.cart-preview {
-  position: absolute;
-  z-index: 2;
-  background-color: white;
-  top:75px;
-  right:10px;
-  width: 80%;
-  max-width: 360px;
-  height: 256px;
-  box-shadow: 0px 20px 50px -20px rgba(29, 32, 38, 0.503143);
-  border-radius: 10px;
-}
-.cart-title {
-  height: 67px;
-  padding: 24px;
-  font-size: 16px;
-  font-weight: 700;
-  border-bottom: 1px solid #e4e9f2;
-
-}
-
-.cart-content {
-  position: absolute;
-  top:120px;
-  left:24px;
-  right:24px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 56px; 
-  font-size: 16px;
-  font-weight: 700;
-  color: #69707d;
-}
-
-.checkout {
-  position: absolute;
-  bottom:24px;
-  left:24px;
-  right:24px;
-  background-color: var(--primary-orange);
-  border-radius: 10px;
-  height: 56px;;
-  color:white;
-  font-weight: 700;
-}
-.checkout:hover {
-  opacity: 0.75;
-}
-
-@media screen and (min-width: 990px) {
- 
-}
 
 
 /* STYLING THE HAMBURBER-MENU ICON */
@@ -347,9 +306,116 @@ nav {
 
   .avatar-img {width: 50px}
 
-  
-
 }
+
+/* STYLING THE CART-PREVIEW */
+.cart-container {
+  width: 100%;
+  height: 100%;
+  background-color: red;
+}
+.cart-preview {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  background-color: white;
+  top:75px;
+  right:10px;
+  width: 80%;
+  max-width: 360px;
+  height: 256px;
+  box-shadow: 0px 20px 50px -20px rgba(29, 32, 38, 0.503143);
+  border-radius: 10px;
+}
+
+.show-cart-preview { display: block;}
+
+.cart-title {
+  height: 67px;
+  padding: 24px;
+  font-size: 16px;
+  font-weight: 700;
+  border-bottom: 1px solid #e4e9f2;
+}
+.closing-cross {
+  position: relative;
+  bottom:10px;
+  color: #69707d;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.closing-cross:hover,
+.closing-cross:focus {    
+  transform: scale(1.5);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.cart-content {
+  position: absolute;
+  top:120px;
+  left:24px;
+  right:24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 56px; 
+  font-size: 16px;
+  font-weight: 700;
+  color: #69707d;
+}
+
+.content-list {
+  position: absolute;
+  bottom:30px;
+  display: none;
+  align-items: center;
+}
+
+.icon-of-choosen-product {
+  width:50px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+.description-of-choosen-products {
+  font-weight: 400;
+  margin-left:10px;
+}
+
+.total-price-in-cart {
+  font-weight: 700;
+  color:black;
+}
+
+#empty {  /* is beeing made visible via javascript */
+  display: block;
+  padding:40% 20%;
+}
+
+#delete-cart {background-color:transparent;}
+#delete-cart:hover {
+  transform: scale(1.5);
+}
+
+.checkout {
+  position: absolute;
+  display:none;
+  bottom:24px;
+  left:24px;
+  right:24px;
+  background-color: var(--primary-orange);
+  border-radius: 10px;
+  height: 56px;;
+  color:white;
+  font-weight: 700;
+}
+.checkout:hover {
+  opacity: 0.75;
+}
+/* END OF STYLING THE CART-PREVIEW
 
 
 /* STYLING THE BANNER/SLIDER */
@@ -357,6 +423,7 @@ nav {
   width: 100%;
   height:auto;
   margin:auto;
+  margin-bottom: 24px;
   overflow:hidden;
   padding: 0px;
 }
@@ -422,6 +489,7 @@ nav {
 .button-next {right: 4%}
 .button-prev:hover, 
 .button-next:hover {background: rgba(205,205,205,1)}
+
 /* BANNER/SLIDER ADAPTION FOR DESKTOP */
 @media screen and (min-width: 990px) {
 

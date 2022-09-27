@@ -35,23 +35,33 @@
     </button>
     
     <img class="logo" src="images/logo.svg" alt="Logo of the brand sneakers">
-    <img class="shopping-cart" src="images/icon-cart.svg" alt="icon cart">
+    <img class="icon-of-shopping-cart" id="icon-of-shopping-cart" src="images/icon-cart.svg" alt="icon cart">
     <img class="avatar-img" src="images/image-avatar.png" alt="avatar">
 
     <!-- cart-preview here   -->
-    <div class="cart-preview">
-      <p class="cart-title">Cart</p>
+    
+    <div class="cart-preview" id="cart-preview">
+      <p class="cart-title">Cart<span class="closing-cross" id="close-cart">&times;</span></p>
       <div class="cart-content">
-        <p>Your cart is empty</p>
+        <p id="empty">Your cart is empty</p>
+        <div class="content-list" id="content-list-">
+            <img class="icon-of-choosen-product" src="images/image-product-1-thumbnail.jpg" alt="icon of choosen product">
+            <p class="description-of-choosen-products">Fall Limited Edition Sneakers $125 x
+              <span id="number-of-items-in-cart">0</span>
+              <span class="total-price-in-cart" id="total-price-in-cart">0</span>
+            </p>
+            <button id="delete-cart"><img src="images/icon-delete.svg" alt="delete button"></button>
+        </div>
       </div>
-      <button class="checkout">Checkout</button>
+      <button class="checkout" id="checkout-button">Checkout</button>
     </div>
+
   </header>
   <main>
     <section class="banner" id="banner">
       <div class="slider" id="slider-">
-        <button class="button-next" id="button-next" role="button"><img src="images/icon-next.svg" alt=""></button>
-        <button class="button-prev" id="button-prev" role="button"><img src="images/icon-previous.svg" alt=""></button>
+        <button class="button-next" id="button-next" ><img src="images/icon-next.svg" alt=""></button>
+        <button class="button-prev" id="button-prev" ><img src="images/icon-previous.svg" alt=""></button>
         
         <ul class="all-slides">
           <li class="slide">
@@ -90,9 +100,9 @@
       </div>
       <div class="cart">
         <div class="new-items-to-cart">
-          <button class="decrease" id="decrease" role="button" onclick="collect(-1)"><img src="images/icon-minus.svg" alt=""></button>
-          <p class="number-of-items-to-add" id="number-of-items">1</p>
-          <button class="increase" id="increase" role="button" onclick="collect(1)"><img src="images/icon-plus.svg" alt=""></button>
+          <button class="decrease" id="decrease" onclick="collect(-1)"><img src="images/icon-minus.svg" alt=""></button>
+          <p class="number-of-items-to-add" id="number-of-items-to-add">1</p>
+          <button class="increase" id="increase" onclick="collect(1)"><img src="images/icon-plus.svg" alt=""></button>
         </div>
         <button class="add-to-cart" id="add-to-cart"><img src="images/icon-cart-white.svg" alt="" onclick="updateCart">Add to cart</button>
       </div>
