@@ -1,5 +1,6 @@
 //GETTING ALL NECESSARY ELEMENTS
 let navigation = document.getElementById('navigation');
+let hamburger = document.getElementById('hamburger');
 let contentList = document.getElementById('content-list-');
 let numberInCart = document.getElementById('number-of-items-in-cart');
 let totalPrice = document.getElementById('total-price-in-cart');
@@ -17,7 +18,6 @@ let numberInCartInt = parseInt(numberInCart.innerHTML);
 let numberOfItemsToAddInt = parseInt(numberOfItemsToAdd.innerHTML);
 let totalPriceInt = parseInt(totalPrice.innerHTML);
 
-
 //DEFINITION OF FUNCTIONS
 
 // This function is invoced with clicking the hamburger-icon
@@ -25,6 +25,10 @@ const myFunction = (event) => {
     // changing the hamburger-icon to cross and back
     event.classList.toggle("change");
     navigation.classList.toggle("nav-open");
+    if (hamburger.getAttribute('aria-expanded') === 'true') {
+        hamburger.setAttribute('aria-expanded', 'false');
+    } else { hamburger.setAttribute('aria-expanded', 'true')}
+    console.log(hamburger.getAttribute('aria-expanded'))
     // let right = (window.innerWidth - document.body.clientWidth - 16 ) / 2;
     // navigation.style.marginRight = `${right}px`;
 }

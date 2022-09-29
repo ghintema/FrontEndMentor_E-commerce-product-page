@@ -28,7 +28,7 @@
       </ul>
     </nav>
     <!-- Aufgrund der Stapellogik MUSS der hamburger hinter das nav! -->
-    <button class="hamburger" aria-label="menu-button" onclick="myFunction(this)">
+    <button class="hamburger" id="hamburger" aria-label="menu-button" aria-expanded="false" onclick="myFunction(this)">
       <div class="bar1"></div>
       <div class="bar2"></div>
       <div class="bar3"></div>
@@ -41,7 +41,7 @@
     <!-- cart-preview here   -->
     
     <div class="cart-preview" id="cart-preview">
-      <p class="cart-title">Cart<span class="closing-cross" id="close-cart">&times;</span></p>
+      <p class="cart-title">Cart<span class="closing-cross" id="close-cart" role="button" aria-label="close cart preview and return to page">&times;</span></p>
       <div class="cart-content">
         <p id="empty">Your cart is empty</p>
         <div class="content-list" id="content-list-">
@@ -50,7 +50,7 @@
               <span id="number-of-items-in-cart">0</span>
               <span class="total-price-in-cart" id="total-price-in-cart">0</span>
             </p>
-            <button id="delete-cart"><img src="images/icon-delete.svg" alt="delete button"></button>
+            <button id="delete-cart" aria-label="empty the cart"><img src="images/icon-delete.svg" alt="delete button"></button>
         </div>
       </div>
       <button class="checkout" id="checkout-button">Checkout</button>
