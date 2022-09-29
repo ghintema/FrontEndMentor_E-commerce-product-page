@@ -180,6 +180,9 @@ header {
   box-sizing:content-box;
   padding:15px;
 }
+button {
+  background-color: transparent;
+}
 
 .avatar-img:hover,
 .avatar-img:focus,

@@ -35,7 +35,7 @@
     </button>
     
     <img class="logo" src="images/logo.svg" alt="Logo of the brand sneakers">
-    <img class="icon-of-shopping-cart" id="icon-of-shopping-cart" src="images/icon-cart.svg" alt="icon cart">
+    <button><img class="icon-of-shopping-cart" id="icon-of-shopping-cart" src="images/icon-cart.svg" alt="icon cart"></button>
     <img class="avatar-img" src="images/image-avatar.png" alt="avatar">
 
     <!-- cart-preview here   -->
@@ -60,8 +60,8 @@
   <main>
     <section class="banner" id="banner">
       <div class="slider" id="slider-">
-        <button class="button-next" id="button-next" ><img src="images/icon-next.svg" alt=""></button>
-        <button class="button-prev" id="button-prev" ><img src="images/icon-previous.svg" alt=""></button>
+        <button class="button-next" id="button-next" aria-label="next picture"><img src="images/icon-next.svg" alt=""></button>
+        <button class="button-prev" id="button-prev" aria-label="previous picture"><img src="images/icon-previous.svg" alt=""></button>
         
         <ul class="all-slides">
           <li class="slide">
@@ -100,9 +100,9 @@
       </div>
       <div class="cart">
         <div class="new-items-to-cart">
-          <button class="decrease" id="decrease" onclick="collect(-1)"><img src="images/icon-minus.svg" alt=""></button>
+          <button class="decrease" id="decrease" aria-label="decrease amount" onclick="collect(-1)"><img src="images/icon-minus.svg" alt=""></button>
           <p class="number-of-items-to-add" id="number-of-items-to-add">1</p>
-          <button class="increase" id="increase" onclick="collect(1)"><img src="images/icon-plus.svg" alt=""></button>
+          <button class="increase" id="increase" aria-label="increase amount" onclick="collect(1)"><img src="images/icon-plus.svg" alt=""></button>
         </div>
         <button class="add-to-cart" id="add-to-cart"><img src="images/icon-cart-white.svg" alt="" onclick="updateCart">Add to cart</button>
       </div>
