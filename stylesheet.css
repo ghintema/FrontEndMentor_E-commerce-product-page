@@ -242,6 +242,7 @@ nav {
   position:absolute;
   top:0px;
   right: 110%;
+  visibility: hidden;
   width: 100%;
   max-width: 445px;
   height:100vh;
@@ -259,6 +260,7 @@ nav {
 .menu > li {margin: 20px 0px;}
 .menu a {color: black;}
 .nav-open { /*This is toggled via javascript to open/close the menu */
+  visibility: visible;
   right: 0%;
   opacity: 1;
   transition: 0.2s ease-in-out;
@@ -280,6 +282,7 @@ nav {
 
   nav {
     position: unset;
+    visibility: visible;
     width: auto;
     height: auto;
     padding:0;

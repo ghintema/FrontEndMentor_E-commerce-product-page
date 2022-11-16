@@ -69,6 +69,7 @@ Users should be able to:
 - How to build a fully-functional slider with autoplay-start-stopp, thumbnail-highlightening and swipe-able.
 - How to build a modal. I finally decided against the modal in favor for plugin the slider directly in the main page. 
 - A lot about stacking, different levels of stacking, different stacking contexts, and z-index in the context of position not(static).
+- Accessibility and the use of aria-label.
 
 
 ```html

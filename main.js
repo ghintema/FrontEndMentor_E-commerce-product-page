@@ -28,7 +28,11 @@ const myFunction = (event) => {
     if (hamburger.getAttribute('aria-expanded') === 'true') {
         hamburger.setAttribute('aria-expanded', 'false');
     } else { hamburger.setAttribute('aria-expanded', 'true')}
-    console.log(hamburger.getAttribute('aria-expanded'))
+
+    if (navigation.getAttribute('aria-hidden') === 'true') {
+        navigation.setAttribute('aria-hidden', 'false');
+    } else { navigation.setAttribute('aria-hidden', 'true')}
+
     // let right = (window.innerWidth - document.body.clientWidth - 16 ) / 2;
     // navigation.style.marginRight = `${right}px`;
 }
@@ -122,6 +126,13 @@ btn.onclick = function() {
         modal.style.display = "block";
     }
 }
+
+x.addListener(() => {
+    if(x.matches) {
+        navigation.setAttribute('aria-hidden', 'false');
+    }
+})
+
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() { modal.style.display = "none"}
 
@@ -131,4 +142,9 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+
+
+
+
 
