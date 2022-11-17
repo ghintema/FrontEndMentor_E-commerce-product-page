@@ -36,7 +36,7 @@ const myFunction = (event) => {
     // let right = (window.innerWidth - document.body.clientWidth - 16 ) / 2;
     // navigation.style.marginRight = `${right}px`;
 }
-
+            
 
 // This function is invoced with "+" and "-" buttons
 const collect = (n) => {
