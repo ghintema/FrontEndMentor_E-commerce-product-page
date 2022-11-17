@@ -1,4 +1,4 @@
-//GETTING ALL NECESSARY ELEMENTS
+//GETTING ALL NECESSARY ELEMENTSpreviewpreview
 let navigation = document.getElementById('navigation');
 let hamburger = document.getElementById('hamburger');
 let contentList = document.getElementById('content-list-');
@@ -64,10 +64,14 @@ const deleteCart = () => {
 
 const openCartPreview = () => {
     cartPreview.style.display = 'block'
+    cartPreview.setAttribute('aria-hidden', 'false')
+    shoppingCartButton.setAttribute('aria-expanded', 'true')
 }
 
 const closeCartPreview = () => {
     cartPreview.style.display = 'none'
+    cartPreview.setAttribute('aria-hidden', 'true')
+    shoppingCartButton.setAttribute('aria-expanded', 'false')
 }
 
 
@@ -130,6 +134,9 @@ btn.onclick = function() {
 x.addListener(() => {
     if(x.matches) {
         navigation.setAttribute('aria-hidden', 'false');
+
+    } else {
+        navigation.setAttribute('aria-hidden', 'true');
     }
 })
 
