@@ -17,7 +17,16 @@
 </head>
 <body>
   <header>
+  
     
+ 
+    <!-- Aufgrund der Stapellogik MUSS der hamburger hinter das nav! -->
+    <button class="hamburger" id="hamburger" aria-label="menu-button" aria-controls="navigation" aria-expanded="false" onclick="myFunction(this)">
+      <div role="presentation" class="bar1"></div>
+      <div role="presentation" class="bar2"></div>
+      <div role="presentation" class="bar3"></div>
+    </button>
+
     <nav id="navigation" aria-hidden="true">
       <ul class="menu fs-menu-text ls-menu-text" role="menu">
         <li><a href="#">Collections</a></li>
@@ -27,21 +36,20 @@
         <li><a href="#">Contact</a></li>
       </ul>
     </nav>
-    <!-- Aufgrund der Stapellogik MUSS der hamburger hinter das nav! -->
-    <button class="hamburger" id="hamburger" aria-label="menu-button" aria-expanded="false" onclick="myFunction(this)">
-      <div class="bar1"></div>
-      <div class="bar2"></div>
-      <div class="bar3"></div>
-    </button>
+   
     
     <img class="logo" src="images/logo.svg" alt="Logo of the brand sneakers">
-    <button><img class="icon-of-shopping-cart" id="icon-of-shopping-cart" src="images/icon-cart.svg" alt="icon cart"></button>
+    <button id="icon-of-shopping-cart"><img class="icon-of-shopping-cart"  src="images/icon-cart.svg" alt="icon cart"></button>
     <img class="avatar-img" src="images/image-avatar.png" alt="avatar">
 
     <!-- cart-preview here   -->
     
     <div class="cart-preview" id="cart-preview">
-      <p class="cart-title">Cart<span class="closing-cross" id="close-cart" role="button" aria-label="close cart preview and return to page">&times;</span></p>
+      <div class="cart-title">
+        <p>Cart</p>
+        <button class="closing-cross" id="close-cart" role="button" aria-label="close cart preview and return to page">&times;</button>
+      </div>
+      
       <div class="cart-content">
         <p id="empty">Your cart is empty</p>
         <div class="content-list" id="content-list-">
@@ -49,8 +57,8 @@
             <p class="description-of-choosen-products">Fall Limited Edition Sneakers $125 x
               <span id="number-of-items-in-cart">0</span>
               <span class="total-price-in-cart" id="total-price-in-cart">0</span>
-            </p>
-            <button id="delete-cart" aria-label="empty the cart"><img src="images/icon-delete.svg" alt="delete button"></button>
+            </p>  
+            <button id="delete-cart" aria-label="empty the cart"><img src="images/icon-delete.svg" role="presentation" alt="delete button"></button>
         </div>
       </div>
       <button class="checkout" id="checkout-button">Checkout</button>

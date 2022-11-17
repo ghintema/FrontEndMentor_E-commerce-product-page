@@ -130,6 +130,9 @@ btn.onclick = function() {
 x.addListener(() => {
     if(x.matches) {
         navigation.setAttribute('aria-hidden', 'false');
+
+    } else {
+        navigation.setAttribute('aria-hidden', 'true');
     }
 })
 
